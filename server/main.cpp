@@ -19,7 +19,7 @@ int main( int argc, char** argv )
         description.add_options()
                 ( "address,a", bpo::value< std::string >()->default_value( "" ),
                   "| TCP socket address" )
-                ( "port,p", bpo::value< std::string >()->default_value( "21" ),
+                ( "port,p", bpo::value< std::string >()->default_value( "23" ),
                   "| TCP socket port" )
                 ( "version,v", "| display version and exit" )
                 ( "help,h", "| display help message and exit" );

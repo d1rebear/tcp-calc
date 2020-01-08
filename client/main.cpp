@@ -30,7 +30,7 @@ int main( int argc, char** argv )
         description.add_options()
                 ( "address,a", bpo::value< std::string >(),
                   "| Server TCP socket address (required)" )
-                ( "port,p", bpo::value< std::string >()->default_value( "21" ),
+                ( "port,p", bpo::value< std::string >()->default_value( "23" ),
                   "| Server TCP socket port" )
                 ( "expression,e", bpo::value< std::string >(),
                   "| Expression to calculate (required; single quoted)" )

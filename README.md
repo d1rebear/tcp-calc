@@ -17,3 +17,8 @@ make install
 ```
 
 Artifacts repo: https://github.com/d1rebear/tcp-calc-build
+
+TODO:
+- [ ] Build required Boost libraries as external cmake project
+- [ ] add CI
+- [ ] license, contribution, etc.

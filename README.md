@@ -11,14 +11,9 @@ Thirdparty dependencies: STATIC Boost (system, chrono, program_options). Tested 
 To build, do:
 ```
 cd /path/to/build/dir
-cmake -DBOOST_ROOT=/path/to/boost/root -DCMAKE_INSTALL_PREFIX=/path/to/install/dir /path/to/tcp-calc/CMakeLists.txt
+cmake -DBOOST_ROOT=/path/to/boost/root -DCMAKE_INSTALL_PREFIX=/path/to/install/dir /path/to/tcp-calc
 make
 make install
 ```
 
 Artifacts repo: https://github.com/d1rebear/tcp-calc-build
-
-TODO:
-- [ ] Build required Boost libraries as external cmake project
-- [ ] add CI
-- [ ] license, contribution, etc.

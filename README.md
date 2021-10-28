@@ -15,5 +15,3 @@ cmake -DBOOST_ROOT=/path/to/boost/root -DCMAKE_INSTALL_PREFIX=/path/to/install/d
 make
 make install
 ```
-
-Artifacts repo: https://github.com/d1rebear/tcp-calc-build

@@ -6,7 +6,9 @@ This project might be useful if you are looking for a simple example of:
 - math expressions parsing (Dijkstra's shunting-yard algorithm);
 - math expressions evaluation.
 
-Thirdparty dependencies: Boost (system, chrono, program_options). Tested with version 1.72.
+Thirdparty dependencies:
+- Boost (system, chrono, program_options).
+  Tested with 1.72 (static), 1.86 (dynamic).
 
 To build, do:
 ```

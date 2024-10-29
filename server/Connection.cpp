@@ -34,8 +34,8 @@ void Connection::start()
 void Connection::stop()
 {
     boost::system::error_code oIgnoredError;
-    m_oSocket.shutdown( boost::asio::ip::tcp::socket::shutdown_both,
-                        oIgnoredError );
+    boost::system::error_code _ = m_oSocket.shutdown(
+            boost::asio::ip::tcp::socket::shutdown_both, oIgnoredError );
     m_oSocket.close();
 }
 

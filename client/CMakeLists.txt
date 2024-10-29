@@ -1,4 +1,4 @@
-cmake_minimum_required( VERSION 3.12 )
+cmake_minimum_required( VERSION 3.30 )
 
 project( tcp-calc-client
     VERSION ${TCPCALC_VERSION}
@@ -37,5 +37,3 @@ target_link_libraries( ${PROJECT_NAME}
 install( TARGETS ${PROJECT_NAME}
     RUNTIME DESTINATION bin
 )
-
-

@@ -1,4 +1,4 @@
-cmake_minimum_required( VERSION 3.12 )
+cmake_minimum_required( VERSION 3.30 )
 
 set( TCPCALC_VERSION 1.0.0 )
 
@@ -7,10 +7,15 @@ project( tcp-calc
     LANGUAGES CXX
 )
 
-set( CMAKE_CXX_STANDARD 98 )
+set( CMAKE_CXX_STANDARD 17 )
 set( CMAKE_CXX_STANDARD_REQUIRED ON )
-set( CMAKE_CXX_VISIBILITY_PRESET hidden )
-set( CMAKE_VISIBILITY_INLINES_HIDDEN ON )
+
+set( CMAKE_EXPORT_COMPILE_COMMANDS 1)
+set( CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_SOURCE_DIR} )
+
+# ignore BOOST deprecated headers
+add_definitions("-DBOOST_ALLOW_DEPRECATED_HEADERS")
+add_definitions("-DBOOST_BIND_GLOBAL_PLACEHOLDERS")
 
 option( BUILD_SERVER "Build server" ON )
 option( BUILD_CLIENT "Build client" ON )

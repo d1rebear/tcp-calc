@@ -1,7 +1,5 @@
 #include "Client.hpp"
 
-#include "Config.h"
-
 #include <boost/asio/connect.hpp>
 #include <boost/asio/streambuf.hpp>
 #include <boost/asio/write.hpp>
@@ -18,6 +16,7 @@ Client::Client( const std::string& address, const std::string& port ):
 {
     using boost::asio::ip::tcp;
 
+    //TODO: proper error handling
     tcp::resolver oResolver( m_oIOContext );
     tcp::resolver::results_type arrEndPoints = oResolver.resolve( address, port );
     boost::asio::connect( m_oSocket, arrEndPoints );

@@ -1,6 +1,5 @@
 #include <cstdlib>
 #include <iostream>
-#include <stdexcept>
 
 #include "Config.h"
 #include "Client.hpp"

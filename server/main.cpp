@@ -1,6 +1,5 @@
 #include <cstdlib>
 #include <iostream>
-#include <stdexcept>
 
 #include "Config.h"
 #include "Server.hpp"
@@ -9,32 +8,32 @@
 
 int main( int argc, char** argv )
 {
-    namespace bpo = boost::program_options;
-    bpo::variables_map vm;
+    using namespace boost::program_options;
+    variables_map variables;
 
     try
     {
-        bpo::options_description description( "Server-side of client-server "
-                                              "calculator.\nOptions" );
+        options_description description( "Server-side of client-server "
+                                         "calculator.\nOptions" );
         description.add_options()
-                ( "address,a", bpo::value< std::string >()->default_value( "" ),
+                ( "address,a", value< std::string >()->default_value( "" ),
                   "| TCP socket address" )
-                ( "port,p", bpo::value< std::string >()->default_value( "23" ),
+                ( "port,p", value< std::string >()->default_value( "23" ),
                   "| TCP socket port" )
                 ( "version,v", "| display version and exit" )
                 ( "help,h", "| display help message and exit" );
 
-        bpo::store( bpo::parse_command_line( argc, argv, description ), vm );
-        bpo::notify( vm );
+        store( parse_command_line( argc, argv, description ), variables );
+        notify( variables );
 
-        if( vm.count( "help" ) > 0 )
+        if( variables.count( "help" ) > 0 )
         {
             std::cout << "Usage: " << argv[0] << " [options]" << std::endl;
             std::cout << description;
             return EXIT_SUCCESS;
         }
 
-        if( vm.count( "version" ) > 0 )
+        if( variables.count( "version" ) > 0 )
         {
             std::cout << PROJECT_NAME << " version: "
                       << PROJECT_VERSION << std::endl;
@@ -54,8 +53,8 @@ int main( int argc, char** argv )
 
     try
     {
-        tcp_calc::server::Server server( vm["address"].as< std::string >(),
-                                         vm["port"].as< std::string >() );
+        tcp_calc::server::Server server( variables["address"].as< std::string >(),
+                                         variables["port"].as< std::string >() );
         server.run();
     }
     catch( const std::exception& ex )

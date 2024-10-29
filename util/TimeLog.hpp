@@ -22,15 +22,15 @@ private:
     const high_resolution_clock::time_point m_nStart;
 };
 
-ScopedTimeLog::ScopedTimeLog( const std::string& name ):
+inline ScopedTimeLog::ScopedTimeLog( const std::string& name ):
     m_strName( name ),
     m_nStart( high_resolution_clock::now() )
 {
 }
 
-ScopedTimeLog::~ScopedTimeLog()
+inline ScopedTimeLog::~ScopedTimeLog()
 {
-    std::printf( "[time log '%s']: %lld \u03BCs.\n",
+    std::printf( "[time log '%s']: %ld \u03BCs.\n",
                  m_strName.c_str(),
                  duration_cast< microseconds >(
                      high_resolution_clock::now()
